@@ -1,0 +1,464 @@
+/* ==========================================================================
+   Merlijn Cremers Portfolio - Exact Wireframe Styling & Responsive Layout
+   Font: Open Sans (Regular 400, Bold 700, ExtraBold 800)
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Potlood-schetsboek achtergrond uit de PDF wireframes */
+  background-color: #ffffff;
+  background-image: url("image/Wireframes/assets/bg_sketch.jpg");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: top center;
+}
+
+/* --------------------------------------------------------------------------
+   Simpele, statische navigatiebalk (Merlijn Cremers, Projecten, About, Contact)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.94);
+  border-bottom: 2px solid #ea5234;
+  padding: 12px 24px;
+}
+
+.site-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #000000;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ea5234;
+}
+
+/* --------------------------------------------------------------------------
+   Pijl terug knop (vanuit een specifiek project terug naar alle projecten)
+   -------------------------------------------------------------------------- */
+.back-arrow-btn {
+  position: fixed;
+  top: 66px;
+  left: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ea5234;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-arrow-btn[hidden] {
+  display: none !important;
+}
+
+.back-arrow-btn:hover {
+  background-color: #d14124;
+}
+
+.back-arrow-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   1920px Wireframe Canvas Schaal-systeem (Desktop & Tablet)
+   Alle maten in cqw (1cqw = 1% van de canvasbreedte = 19.2px bij 1920px)
+   zodat de layout 100% identiek is aan Wireframesv6.pdf.
+   -------------------------------------------------------------------------- */
+.wf-canvas {
+  position: relative;
+  width: 100%;
+  container-type: inline-size;
+  /* Hoogte exact volgens PDF sectiehoogte (--canvas-h / 19.2 * 1cqw) */
+  height: calc((var(--canvas-h, 10000) / 19.2) * 1vw);
+  overflow: hidden;
+}
+
+.wf-canvas[hidden] {
+  display: none !important;
+}
+
+.scroll-anchor {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  scroll-margin-top: 60px;
+}
+
+/* Oranje balk met schetsachtig detail eromheen */
+.wf-banner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wf-banner a,
+.wf-banner .about-content-wrap {
+  pointer-events: auto;
+}
+
+.banner-bg-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  user-select: none;
+}
+
+.banner-text-wrap {
+  position: absolute;
+  left: 16cqw;
+  right: 16cqw;
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.banner-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 4.1667cqw; /* Exact 80px op 1920px */
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+}
+
+.contact-title {
+  font-size: 3.75cqw; /* Exact 72px op 1920px */
+}
+
+.banner-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.25cqw; /* Exact 24px op 1920px */
+  line-height: 1.4;
+  color: #ffffff;
+  margin-top: 0.65cqw;
+}
+
+.contact-links a {
+  color: #ffffff;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* Afbeelding kaders (statisch + bij hover op een project-thumbnail wordt deze iets groter) */
+.wf-item {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+}
+
+.wf-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Thumbnail hover-effect: bij hover met de muis wordt de afbeelding iets groter */
+.project-thumb {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  z-index: 3;
+}
+
+.project-thumb:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Tekstblokken exact volgens de PDF (Open Sans ExtraBold 60px & Regular 24px) */
+.wf-text {
+  position: absolute;
+  z-index: 3;
+  color: #000000;
+}
+
+.proj-heading h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 3.125cqw; /* Exact 60px op 1920px */
+  line-height: 1.22;
+  color: #000000;
+  margin: 0;
+}
+
+.proj-body p,
+.about-text p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.25cqw; /* Exact 24px op 1920px */
+  line-height: 1.24;
+  margin-bottom: 1.35cqw;
+}
+
+.proj-body p:last-child,
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-text {
+  color: #ffffff;
+}
+
+.about-text p {
+  color: #ffffff;
+}
+
+.proj-body a {
+  color: inherit;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.utrecht-overlay-text,
+.utrecht-overlay-text p,
+.utrecht-overlay-text a {
+  color: #ffffff;
+}
+
+.utrecht-lead {
+  margin-bottom: 1.35cqw;
+}
+
+.utrecht-link {
+  margin-top: 2.2cqw;
+}
+
+/* ==========================================================================
+   Responsive weergave voor kleinere schermen (bijv. telefoon / kleine tablet)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 10px 12px;
+  }
+
+  .site-nav {
+    gap: 14px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+
+  .back-arrow-btn {
+    top: 54px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 15px;
+  }
+
+  .wf-canvas {
+    height: auto !important;
+    padding-top: 44px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-anchor {
+    position: relative;
+    top: auto !important;
+    width: 100%;
+    height: 0;
+  }
+
+  /* Balken op mobiel */
+  .wf-banner {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 12px 0;
+  }
+
+  .banner-text-wrap {
+    left: 12%;
+    right: 12%;
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
+
+  .banner-title {
+    font-size: clamp(22px, 6vw, 34px);
+  }
+
+  .contact-title {
+    font-size: clamp(20px, 5.5vw, 30px);
+  }
+
+  .banner-subtitle {
+    font-size: clamp(11px, 3vw, 15px);
+    margin-top: 6px;
+  }
+
+  /* About balk op mobiel: oranje achtergrond uitbreiden zodat tekst en foto erin passen */
+  .about-banner .banner-text-wrap {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    background-color: #ea5234;
+    padding: 24px 20px 8px;
+  }
+
+  .about-banner .banner-bg-img {
+    display: block;
+  }
+
+  .about-content-wrap {
+    background-color: #ea5234;
+    padding: 16px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .about-text {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .about-photo {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 75% !important;
+    max-width: 280px;
+    height: auto !important;
+  }
+
+  .about-photo img {
+    height: auto;
+  }
+
+  /* Groepen met thumbnails op de hoofdpagina */
+  .mobile-group {
+    width: 100%;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    align-items: center;
+  }
+
+  .preview-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 520px) {
+    .preview-group,
+    .overview-group {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+    }
+  }
+
+  /* Losse project-items & tekstblokken op mobiel */
+  .wf-item {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: calc(100% - 32px) !important;
+    max-width: 500px;
+    height: auto !important;
+    margin: 8px auto;
+  }
+
+  .mobile-group .wf-item {
+    width: 100% !important;
+    margin: 0;
+  }
+
+  .wf-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .wf-text {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: calc(100% - 32px) !important;
+    max-width: 540px;
+    margin: 16px auto;
+  }
+
+  .proj-heading h3 {
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.25;
+  }
+
+  .proj-body p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .utrecht-overlay-text {
+    background-color: #1a1d24;
+    padding: 20px;
+    margin-top: -8px;
+  }
+}

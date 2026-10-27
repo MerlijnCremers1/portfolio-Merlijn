@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merlijn Cremers - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Simpele statische navigatiebalk -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Hoofdnavigatie">
+      <a href="#home" class="nav-link" data-nav="home">Merlijn Cremers</a>
+      <a href="#projecten" class="nav-link" data-nav="projecten">Projecten</a>
+      <a href="#about" class="nav-link" data-nav="about">About</a>
+      <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Pijl terug knop (alleen zichtbaar wanneer een specifiek project geopend is) -->
+  <button type="button" id="back-to-projects" class="back-arrow-btn" aria-label="Terug naar overzicht met alle projecten" hidden>
+    <span class="back-arrow-icon" aria-hidden="true">&#8592;</span>
+    <span class="back-arrow-label">Terug</span>
+  </button>
+
+  <!-- Hoofdpagina (Scroll webpagina: Merlijn Cremers preview -> Projecten -> About -> Contact) -->
+  <main id="main-view" class="wf-canvas main-canvas" style="--canvas-h: 9120;">
+    <!-- Sectie 1: Merlijn Cremers & Preview van de 3 belangrijkste projecten -->
+    <div id="home" class="scroll-anchor" style="top: 0;"></div>
+    <div class="wf-banner" style="left: -0.078cqw; top: -0.068cqw; width: 100.161cqw; height: 68.615cqw;">
+      <img src="image/Wireframes/assets/banner_top.png" alt="" class="banner-bg-img">
+      <div class="banner-text-wrap" style="top: 27.385cqw;">
+        <h1 class="banner-title">Merlijn Cremers</h1>
+        <p class="banner-subtitle">Onderzoeken in vorm en inhoud dat groeit naar Grafische vormgeving.</p>
+      </div>
+    </div>
+    <div class="mobile-group preview-group">
+      <a href="#project/voodoo-mijnwerker" class="wf-item project-thumb" data-project="voodoo-mijnwerker" style="left: 14.0625cqw; top: 68.5104cqw; width: 17.5260cqw; height: 24.6406cqw;" aria-label="Bekijk project Voodoo Mijnwerker">
+        <img src="image/Voodoodoll%20project/hoofd-20260325_121523.jpg" alt="Voodoo Mijnwerker">
+      </a>
+      <a href="#project/troostenaar" class="wf-item project-thumb" data-project="troostenaar" style="left: 37.6250cqw; top: 72.0573cqw; width: 24.7500cqw; height: 17.5469cqw;" aria-label="Bekijk project Troostenaar">
+        <img src="image/Troostenaar%20project/hoofd-Poster_blik_mockupv2.png" alt="Troostenaar">
+      </a>
+      <a href="#project/doomscroll" class="wf-item project-thumb" data-project="doomscroll" style="left: 68.4635cqw; top: 68.5104cqw; width: 17.4219cqw; height: 24.6406cqw;" aria-label="Bekijk project Doomscroll">
+        <img src="image/Doomscroll%20project/hoofd-swipev25a2.png" alt="Doomscroll">
+      </a>
+    </div>
+
+    <!-- Sectie 2: Overzicht van alle 10 projecten -->
+    <div id="projecten" class="scroll-anchor" style="top: 92.854cqw;"></div>
+    <div class="wf-banner" style="left: -0.078cqw; top: 92.854cqw; width: 100.161cqw; height: 77.010cqw;">
+      <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+      <div class="banner-text-wrap" style="top: 37.062cqw;">
+        <h2 class="banner-title">Projecten</h2>
+        <p class="banner-subtitle">Voodoo Mijnwerker - Troostenaar - Doomscroll</p>
+      </div>
+    </div>
+    <div class="mobile-group overview-group">
+      <a href="#project/voodoo-mijnwerker" class="wf-item project-thumb" data-project="voodoo-mijnwerker" style="left: 14.1118cqw; top: 170.3256cqw; width: 17.5293cqw; height: 24.6371cqw;" aria-label="Bekijk project Voodoo Mijnwerker">
+        <img src="image/Voodoodoll%20project/hoofd-20260325_121523.jpg" alt="Voodoo Mijnwerker">
+      </a>
+      <a href="#project/doomscroll" class="wf-item project-thumb" data-project="doomscroll" style="left: 37.6803cqw; top: 170.3256cqw; width: 17.4235cqw; height: 24.6371cqw;" aria-label="Bekijk project Doomscroll">
+        <img src="image/Doomscroll%20project/hoofd-swipev25a2.png" alt="Doomscroll">
+      </a>
+      <a href="#project/troostenaar" class="wf-item project-thumb" data-project="troostenaar" style="left: 61.1406cqw; top: 177.4770cqw; width: 24.7500cqw; height: 17.5500cqw;" aria-label="Bekijk project Troostenaar">
+        <img src="image/Troostenaar%20project/hoofd-Poster_blik_mockupv2.png" alt="Troostenaar">
+      </a>
+      <a href="#project/groeischilderij" class="wf-item project-thumb" data-project="groeischilderij" style="left: 6.9500cqw; top: 201.0030cqw; width: 24.6371cqw; height: 17.5294cqw;" aria-label="Bekijk project Groeischilderij">
+        <img src="image/Groeischilderij/hoofd-20231007_151057.jpg" alt="Groeischilderij">
+      </a>
+      <a href="#project/american-psycho-optiteling" class="wf-item project-thumb" data-project="american-psycho-optiteling" style="left: 37.6277cqw; top: 201.0571cqw; width: 24.7446cqw; height: 17.4213cqw;" aria-label="Bekijk project American Psycho Optiteling">
+        <img src="image/American%20Psycho%20Optiteling/hoofd.jpg" alt="American Psycho Optiteling">
+      </a>
+      <a href="#project/totem" class="wf-item project-thumb" data-project="totem" style="left: 68.3588cqw; top: 201.0571cqw; width: 17.5294cqw; height: 24.6371cqw;" aria-label="Bekijk project Totem">
+        <img src="image/Totem/hoofd-20231013_183118.jpg" alt="Totem">
+      </a>
+      <a href="#project/tekenwerk" class="wf-item project-thumb" data-project="tekenwerk" style="left: 14.1122cqw; top: 225.0354cqw; width: 17.5280cqw; height: 24.7424cqw;" aria-label="Bekijk project Tekenwerk">
+        <img src="image/Tekenwerk/hoofd-20230926_215151.jpg" alt="Tekenwerk">
+      </a>
+      <a href="#project/inzakken" class="wf-item project-thumb" data-project="inzakken" style="left: 37.6274cqw; top: 225.0881cqw; width: 17.5294cqw; height: 24.6371cqw;" aria-label="Bekijk project Inzakken">
+        <img src="image/Inzakken/hoofd-20231216_121502.jpg" alt="Inzakken">
+      </a>
+      <a href="#project/een-utrechtse-middag" class="wf-item project-thumb" data-project="een-utrechtse-middag" style="left: 61.1403cqw; top: 232.3039cqw; width: 24.7506cqw; height: 17.4213cqw;" aria-label="Bekijk project Een Utrechtse middag">
+        <img src="image/Een%20Utrechtse%20middag/hoofd-Schermafbeelding%202024-04-22%20205753.png" alt="Een Utrechtse middag">
+      </a>
+      <a href="#project/abstractie-studie" class="wf-item project-thumb" data-project="abstractie-studie" style="left: 14.1113cqw; top: 256.2827cqw; width: 24.7439cqw; height: 17.5272cqw;" aria-label="Bekijk project Abstractie studie">
+        <img src="image/Abstractie%20studie/hoofd.jpg" alt="Abstractie studie">
+      </a>
+    </div>
+
+    <!-- Sectie 3: About -->
+    <div id="about" class="scroll-anchor" style="top: 273.625cqw;"></div>
+    <div class="wf-banner about-banner" style="left: -0.083cqw; top: 273.625cqw; width: 100.167cqw; height: 110.828cqw;">
+      <img src="image/Wireframes/assets/banner_about.png" alt="" class="banner-bg-img">
+      <div class="banner-text-wrap" style="top: 37.703cqw;">
+        <h2 class="banner-title">About</h2>
+        <p class="banner-subtitle">Onderzoeken in vorm en inhoud dat groeit naar Grafische vormgeving.</p>
+      </div>
+      <div class="about-content-wrap">
+        <div class="wf-text about-text" style="left: 23.625cqw; top: 48.323cqw; width: 32.536cqw;">
+          <p>Een ontwerper die focus legt op onderzoeken in vorm en inhoud. Door te beginnen met ontdekken en breed onderzoeken, kan ik meer de essentie van een ontwerp verbeelden. Het is belangrijk als ontwerper om op een eigen manier mijn mening te kunnen vertellen doormiddel van mijn ontwerpers schap. Ik schrijf en teken veel in mijn ontwerpproces. Hierna leg ik de focus op grafische vormgeving als eindproduct.</p>
+          <p>Voorheen lag mijn focus puur op vormgeving. Momenteel wil ik de essentie onderzoeken voordat ik ontwerp. Na dit gedaan te hebben kan ik mij positioneren in de maatschappij en een mening vormen. Door deze denkwijze te ontwikkelen kan ik mijzelf beter openen zowel als persoon en in het maken.</p>
+        </div>
+        <div class="wf-item about-photo" style="left: 58.901cqw; top: 48.297cqw; width: 17.531cqw; height: 24.953cqw;">
+          <img src="image/Ik%20zelf-about/DSC00052-2.jpg" alt="Merlijn Cremers">
+        </div>
+      </div>
+    </div>
+
+    <!-- Sectie 4: Contact -->
+    <div id="contact" class="scroll-anchor" style="top: 391.958cqw;"></div>
+    <div class="wf-banner contact-banner" style="left: -0.083cqw; top: 391.958cqw; width: 100.167cqw; height: 81.573cqw;">
+      <img src="image/Wireframes/assets/banner_contact.png" alt="" class="banner-bg-img">
+      <div class="banner-text-wrap contact-text-wrap" style="top: 37.104cqw;">
+        <h2 class="banner-title contact-title">Contact</h2>
+        <p class="banner-subtitle contact-links">
+          <a href="mailto:merlijn.cremers@gmail.com" target="_blank" rel="noopener noreferrer">merlijn.cremers@gmail.com</a><br>
+          <a href="https://www.linkedin.com/in/merlijn-cremers/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/merlijn-cremers/</a>
+        </p>
+      </div>
+    </div>
+  </main>
+  <!-- Specifieke Projectpagina's (10 projecten exact volgens de PDF wireframes) -->
+  <div id="projects-container">
+    <section id="project-voodoo-mijnwerker" class="wf-canvas project-detail" data-project-id="voodoo-mijnwerker" style="--canvas-h: 5560.0;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: -0.0781cqw; width: 100.1250cqw; height: 68.5781cqw;">
+        <img src="image/Wireframes/assets/banner_top.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 28.9479cqw;">
+          <h2 class="banner-title">Voodoo Mijnwerker</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: 20.6250cqw; top: 68.4375cqw; width: 28.1250cqw; height: 37.5000cqw;">
+        <img src="image/Voodoodoll%20project/hoofd-20260325_121523.jpg" alt="Voodoo Mijnwerker afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 51.2500cqw; top: 68.4375cqw; width: 28.1250cqw; height: 37.5000cqw;">
+        <img src="image/Voodoodoll%20project/20260325_121507.jpg" alt="Voodoo Mijnwerker afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-text proj-heading" style="left: 20.6250cqw; top: 109.3698cqw; width: 55.4167cqw;">
+        <h3>In hoeverre kun je vreugde<br>vasthouden wetende dat anderen<br>hiervoor hebben geleden.</h3>
+      </div>
+      <div class="wf-text proj-body" style="left: 20.6250cqw; top: 125.8229cqw; width: 58.4688cqw;">
+        <p>Wij als welvarend Nederland importeren ongeveer 1/3 van ons ijzer vanuit Brazilië. Het ijzer dat wij naar Nederland importeren komt uit Canada, Zuid-Afrika, Brazilië, Noorwegen, Zwedenen de Verenigde staten. Waarvan Bijna alles uit Zuid-Afrika en Brazilië komt. Waarom importeren wij zoveel ijzer vanuit 3e wereld landen? Dit heeft er mee te maken dat de allerbeste bronnen met de hoogste Fe% waarde uit deze landen komen. Het beste ijzer komt uit Brazilië. Dit ijzer is ontzettend hoogwaardige kwaliteit en qua verhouding is het niet al te duur. Ook is de grootste ijzermijn ter wereld Carajás-mijn hier gevestigd.</p><p>De arbeidsomstandigheden in de ijzermijnen van Brazilie zijn niet best. Er geuberen regelmatig ongelukken denk aan damdoorbraken waardoor de ijzermijnen vol lopen met water, blootstelling aan gevaarlijke stoffen en lucht, Illegale mijnbouw bedreiging voor inheemse bevolking of bosgebieden, moderne slavernij en sociale gevolgen als drugs, prostitutie en onvoldoende huisvesting.</p><p>Bij het kopen of begruiken van ijzeren product ben je er niet bewust van dat hier anderen voor hebben geleden. Voor vele uit de westerse cultuur is het tegenwoordig vaak vanzelfsprekend om ijzeren producten te bezitten. Een ijzerenfotohouder is het product waar ik mee gestart ben.</p><p>Als ik een foto plaats in een ijzeren fotohouder zie ik dat als het plaatsen van een herinnering. Vaak zijn dit mooie herinneringen. Een stukje geluk dat ik eigenlijk plaats in een stukje leed van een ander onbewust.</p>
+      </div>
+      <div class="wf-item " style="left: 1.8215cqw; top: 161.2475cqw; width: 18.8569cqw; height: 25.2604cqw;">
+        <img src="image/Voodoodoll%20project/20260325_113956.jpg" alt="Voodoo Mijnwerker afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 21.1965cqw; top: 161.2475cqw; width: 18.8569cqw; height: 25.2604cqw;">
+        <img src="image/Voodoodoll%20project/20260325_114027.jpg" alt="Voodoo Mijnwerker afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 40.5715cqw; top: 161.2475cqw; width: 18.8569cqw; height: 25.2604cqw;">
+        <img src="image/Voodoodoll%20project/20260325_113934.jpg" alt="Voodoo Mijnwerker afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 59.9466cqw; top: 161.2475cqw; width: 18.8569cqw; height: 25.2604cqw;">
+        <img src="image/Voodoodoll%20project/20260325_114152.jpg" alt="Voodoo Mijnwerker afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 79.3216cqw; top: 161.2475cqw; width: 18.8569cqw; height: 25.2604cqw;">
+        <img src="image/Voodoodoll%20project/20260325_114219.jpg" alt="Voodoo Mijnwerker afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 1.8750cqw; top: 187.1329cqw; width: 18.7500cqw; height: 18.7500cqw;">
+        <img src="image/Voodoodoll%20project/Object%20transformatie%20familie%20foto.png" alt="Voodoo Mijnwerker afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 21.2500cqw; top: 187.1329cqw; width: 18.7500cqw; height: 18.7500cqw;">
+        <img src="image/Voodoodoll%20project/Object%20transformatie%20familie%20fotov2.png" alt="Voodoo Mijnwerker afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 40.6250cqw; top: 187.1329cqw; width: 18.7500cqw; height: 18.7500cqw;">
+        <img src="image/Voodoodoll%20project/Object%20transformatie%20familie%20fotov3.png" alt="Voodoo Mijnwerker afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 60.0000cqw; top: 187.1329cqw; width: 18.7500cqw; height: 18.7500cqw;">
+        <img src="image/Voodoodoll%20project/Object%20transformatie%20mijnwerker%20foto.png" alt="Voodoo Mijnwerker afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 15.4818cqw; top: 208.9583cqw; width: 69.0365cqw; height: 48.4977cqw;">
+        <img src="image/Voodoodoll%20project/Onderzoek%20Fotohoudev2r.jpg" alt="Voodoo Mijnwerker afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 1.8750cqw; top: 260.6717cqw; width: 18.7500cqw; height: 25.3753cqw;">
+        <img src="image/Voodoodoll%20project/28_cafd5f9505_ANP-69478461_Pagina_07_Afbeelding_0001.jpg" alt="Voodoo Mijnwerker afbeelding 13" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 21.2500cqw; top: 260.6728cqw; width: 18.7500cqw; height: 25.3731cqw;">
+        <img src="image/Voodoodoll%20project/28_cafd5f9505_ANP-69478461_Pagina_08_Afbeelding_0001.jpg" alt="Voodoo Mijnwerker afbeelding 14" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 40.6250cqw; top: 260.6741cqw; width: 18.7500cqw; height: 25.3705cqw;">
+        <img src="image/Voodoodoll%20project/Adobe%20Scan%2029%20mrt%202026%20(1)_Pagina_04_Afbeelding_0001.jpg" alt="Voodoo Mijnwerker afbeelding 15" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 60.0000cqw; top: 260.6729cqw; width: 18.7500cqw; height: 25.3731cqw;">
+        <img src="image/Voodoodoll%20project/Adobe%20Scan%2029%20mrt%202026%20(1)_Pagina_06_Afbeelding_0001.jpg" alt="Voodoo Mijnwerker afbeelding 16" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 79.3750cqw; top: 260.6667cqw; width: 18.7500cqw; height: 25.3854cqw;">
+        <img src="image/Voodoodoll%20project/Adobe%20Scan%2029%20mrt%202026%20(1)_Pagina_12_Afbeelding_0001.jpg" alt="Voodoo Mijnwerker afbeelding 17" loading="lazy">
+      </div>
+    </section>
+    <section id="project-doomscroll" class="wf-canvas project-detail" data-project-id="doomscroll" style="--canvas-h: 4298.3;" hidden>
+      <div class="wf-banner" style="left: -0.0625cqw; top: 0.0000cqw; width: 100.1302cqw; height: 77.0104cqw;">
+        <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 37.3750cqw;">
+          <h2 class="banner-title">Doomscroll</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: 21.2500cqw; top: 77.7240cqw; width: 38.1250cqw; height: 53.9093cqw;">
+        <img src="image/Doomscroll%20project/hoofd-swipev25a2.png" alt="Doomscroll afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-text proj-body" style="left: 72.2604cqw; top: 77.7500cqw; width: 25.9687cqw;">
+        <p>Deze poster gaat over doomscrollen. Dit betekent eindeloos swipen op je smartphone. Telefoon verslaving en het consumeren van sociale media komt tegewoordig steeds meer voor.</p><p>Deze poster moet op een extreme manier deze verslaving uitbeelden. Je blijft maar door swipen zelfs je vinger raakt bebloed en verschrompeld. Net zoals jij zelf als je niet kan stoppen met swipen.</p>
+      </div>
+      <div class="wf-item " style="left: 72.2600cqw; top: 95.0677cqw; width: 25.8650cqw; height: 36.5656cqw;">
+        <img src="image/Doomscroll%20project/handdefv3_Pagina_2.jpg" alt="Doomscroll afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 1.8750cqw; top: 136.4818cqw; width: 18.7500cqw; height: 25.4095cqw;">
+        <img src="image/Doomscroll%20project/Schermafbeelding%202026-09-09%20111134.png" alt="Doomscroll afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 21.2500cqw; top: 136.4866cqw; width: 18.7500cqw; height: 25.4001cqw;">
+        <img src="image/Doomscroll%20project/Schermafbeelding%202026-09-09%20111145.png" alt="Doomscroll afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 40.6250cqw; top: 136.4925cqw; width: 18.7500cqw; height: 25.3881cqw;">
+        <img src="image/Doomscroll%20project/Tekeningen%20schets_Pagina_3_Afbeelding_0001.jpg" alt="Doomscroll afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 60.0000cqw; top: 136.4925cqw; width: 18.7500cqw; height: 25.3881cqw;">
+        <img src="image/Doomscroll%20project/Tekeningen%20schets_Pagina_1_Afbeelding_0001.jpg" alt="Doomscroll afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 79.3750cqw; top: 136.4925cqw; width: 18.7500cqw; height: 25.3881cqw;">
+        <img src="image/Doomscroll%20project/Tekeningen%20schets_Pagina_2_Afbeelding_0001.jpg" alt="Doomscroll afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4844cqw; top: 162.3884cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105042.jpg" alt="Doomscroll afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3698cqw; top: 162.3884cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105403.jpg" alt="Doomscroll afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.2552cqw; top: 162.3884cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105504.jpg" alt="Doomscroll afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4844cqw; top: 181.7633cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105526.jpg" alt="Doomscroll afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3698cqw; top: 181.7633cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105541.jpg" alt="Doomscroll afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.2552cqw; top: 181.7633cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105624.jpg" alt="Doomscroll afbeelding 13" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4844cqw; top: 201.1384cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105638.jpg" alt="Doomscroll afbeelding 14" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3698cqw; top: 201.1384cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105649.jpg" alt="Doomscroll afbeelding 15" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.2552cqw; top: 201.1384cqw; width: 25.2604cqw; height: 18.8569cqw;">
+        <img src="image/Doomscroll%20project/20251015_105703.jpg" alt="Doomscroll afbeelding 16" loading="lazy">
+      </div>
+    </section>
+    <section id="project-troostenaar" class="wf-canvas project-detail" data-project-id="troostenaar" style="--canvas-h: 5380.0;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: -0.0833cqw; width: 100.1250cqw; height: 68.9688cqw;">
+        <img src="image/Wireframes/assets/banner_top.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 29.3385cqw;">
+          <h2 class="banner-title">Troostenaar</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: 9.5312cqw; top: 68.8242cqw; width: 49.8438cqw; height: 34.6570cqw;">
+        <img src="image/Troostenaar%20project/hoofd-Poster_blik_mockupv2.png" alt="Troostenaar afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 67.1124cqw; top: 68.8242cqw; width: 31.0126cqw; height: 43.8501cqw;">
+        <img src="image/Troostenaar%20project/MelancholischBier_posterv9a3.png" alt="Troostenaar afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 9.5260cqw; top: 105.4167cqw; width: 49.8542cqw; height: 34.6570cqw;">
+        <img src="image/Troostenaar%20project/Poster_blik_mockup.png" alt="Troostenaar afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-text proj-heading" style="left: 21.2500cqw; top: 144.5365cqw; width: 50.9896cqw;">
+        <h3>Brandstory Melancholisch bier:<br>Troostenaar</h3>
+      </div>
+      <div class="wf-text proj-body" style="left: 21.2500cqw; top: 154.9896cqw; width: 57.4323cqw;">
+        <p>Wat zijn vaak melancholische momenten voor mensen? Het gevoel dat iets afsluit vaak zonder duidelijke reden. Denk aan de dag die eindigt of alleen zijn terwijl het donker word. Stilte na gezelligheid kan onverwacht aanvoelen. Denk aan na een feest is ineens iedereen weg en blijf alleen jij nog over. Het terug kijken van berichten van foto’s kan als dankbaarheid en gemis aanvoelen. Mensen die er niet meer zijn. Oudvrienden of iemand die is overleden.</p><p>Melancholie kan op veel verschillende manieren ervaren worden. Dit kun je krijgen als je de regen hoort tikken, aan het wachten bent op een treinstation, de laatste schooldag, verhuizen en het afscheid nemen van een bepaalde periode in je leven.</p><p>De meest herkenbare melancholie die iedereen wel eens heeft meegemaakt is de laatste schooldag. Dit is een goed voorbeeld van het afsluiten ven een periode in je leven. Er veranderingen dingen in je leven, je krijgt tijd om verder en terug te denken. Je beseft dat er iets definitiefs veranderd in je leven.</p><p>Op de laatste schooldag valt er altijd een bepaald licht binnen. Dat specifieke licht verwijst naar de eerste “Golden Hour dagen”. Dan bedoel ik het zomerse licht. Daarom heb ik ervoor gekozen om een blikje te designen die lichtinval door kozijnen weergeeft. Met het idee dat dit staat voor een aflsuiting van een periode in je leven. Door het drinken van dit bier krijg je de tijd om even terug te mogen denken aan deze mooie momenten in je leven, maar wel op een positieve manier. Daarom bied dit biertje troost.</p>
+      </div>
+      <div class="wf-item " style="left: 21.2500cqw; top: 191.7284cqw; width: 18.7500cqw; height: 26.5217cqw;">
+        <img src="image/Troostenaar%20project/Melancholisch%20shades-02.jpg" alt="Troostenaar afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 40.6250cqw; top: 191.7284cqw; width: 18.7500cqw; height: 26.5217cqw;">
+        <img src="image/Troostenaar%20project/Melancholisch%20shades-04.jpg" alt="Troostenaar afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 60.0000cqw; top: 191.7308cqw; width: 18.7500cqw; height: 26.5168cqw;">
+        <img src="image/Troostenaar%20project/MelancholischBier_posterv2.png" alt="Troostenaar afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4080cqw; top: 218.8751cqw; width: 25.4132cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Melancholisch%20blik.jpg" alt="Troostenaar afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.2934cqw; top: 218.8751cqw; width: 25.4132cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Melancholisch%20blikv4.jpg" alt="Troostenaar afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.1788cqw; top: 218.8751cqw; width: 25.4132cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Melancholisch%20blikv5.jpg" alt="Troostenaar afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4284cqw; top: 238.2501cqw; width: 25.3724cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Moodboard.jpg" alt="Troostenaar afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3134cqw; top: 238.2501cqw; width: 25.3732cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Schermafbeelding%202026-10-04%20140809.png" alt="Troostenaar afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.2000cqw; top: 238.2501cqw; width: 25.3708cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Merlijn%20Cremers%20Cremers_202606111605_Pagina_09_Afbeelding_0001.jpg" alt="Troostenaar afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4239cqw; top: 257.6251cqw; width: 25.3814cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Adobe%20Scan%2011%20jun%202026_Pagina_1_Afbeelding_0001.jpg" alt="Troostenaar afbeelding 13" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3046cqw; top: 257.6251cqw; width: 25.3909cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Adobe%20Scan%2011%20jun%202026_Pagina_2_Afbeelding_0001.jpg" alt="Troostenaar afbeelding 14" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.2000cqw; top: 257.6251cqw; width: 25.3708cqw; height: 18.7500cqw;">
+        <img src="image/Troostenaar%20project/Merlijn%20Cremers%20Cremers_202606111605_Pagina_08_Afbeelding_0001.jpg" alt="Troostenaar afbeelding 15" loading="lazy">
+      </div>
+    </section>
+    <section id="project-groeischilderij" class="wf-canvas project-detail" data-project-id="groeischilderij" style="--canvas-h: 2591.7;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: 0.0000cqw; width: 100.1250cqw; height: 77.0104cqw;">
+        <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 37.3750cqw;">
+          <h2 class="banner-title">Groeischilderij</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: -0.0546cqw; top: 77.0857cqw; width: 11.3960cqw; height: 15.1605cqw;">
+        <img src="image/Groeischilderij/20240216_155729.jpg" alt="Groeischilderij afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.2359cqw; top: 77.0845cqw; width: 11.3955cqw; height: 15.1613cqw;">
+        <img src="image/Groeischilderij/20240216_155656.jpg" alt="Groeischilderij afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 22.5249cqw; top: 77.0847cqw; width: 11.3948cqw; height: 15.1609cqw;">
+        <img src="image/Groeischilderij/20240216_155758.jpg" alt="Groeischilderij afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 46.6058cqw; top: 82.4809cqw; width: 53.4552cqw; height: 42.3926cqw;">
+        <img src="image/Groeischilderij/hoofd-20231007_151057.jpg" alt="Groeischilderij afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 34.5301cqw; top: 84.6126cqw; width: 11.3956cqw; height: 15.1571cqw;">
+        <img src="image/Groeischilderij/20240216_155740.jpg" alt="Groeischilderij afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: -0.0549cqw; top: 92.1385cqw; width: 11.2723cqw; height: 15.1592cqw;">
+        <img src="image/Groeischilderij/20240216_155809.jpg" alt="Groeischilderij afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.2360cqw; top: 92.1382cqw; width: 11.3975cqw; height: 15.1585cqw;">
+        <img src="image/Groeischilderij/20240216_155709.jpg" alt="Groeischilderij afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 22.5236cqw; top: 92.1378cqw; width: 11.3966cqw; height: 15.1605cqw;">
+        <img src="image/Groeischilderij/20240216_155817.jpg" alt="Groeischilderij afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 34.5299cqw; top: 99.6621cqw; width: 11.3959cqw; height: 15.1623cqw;">
+        <img src="image/Groeischilderij/20240216_155833.jpg" alt="Groeischilderij afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: -0.0540cqw; top: 107.1893cqw; width: 11.3971cqw; height: 15.1600cqw;">
+        <img src="image/Groeischilderij/20240216_155749.jpg" alt="Groeischilderij afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.2350cqw; top: 107.1896cqw; width: 11.3991cqw; height: 15.1594cqw;">
+        <img src="image/Groeischilderij/20240216_155721.jpg" alt="Groeischilderij afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 22.5233cqw; top: 107.1895cqw; width: 11.3996cqw; height: 15.1588cqw;">
+        <img src="image/Groeischilderij/20240216_155826.jpg" alt="Groeischilderij afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-text proj-body" style="left: 7.3333cqw; top: 123.7604cqw; width: 32.8438cqw;">
+        <p>Inspiratie Escher optische illusie gebouw. Door details op verschillende manier en steeds afwijkender na te maken onstaat er langzaam een perfect begin schilderij. Op dit beginschilderij ben ik steeds gaan reageren. En dit groeit tot een groot geheel.</p>
+      </div>
+    </section>
+    <section id="project-american-psycho-optiteling" class="wf-canvas project-detail" data-project-id="american-psycho-optiteling" style="--canvas-h: 3610.0;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: -0.0625cqw; width: 100.1250cqw; height: 68.6875cqw;">
+        <img src="image/Wireframes/assets/banner_top.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 26.2396cqw;">
+          <h2 class="banner-title">American Psycho<br>Optiteling</h2>
+        </div>
+      </div>
+      <div class="wf-item full-bleed-item" style="left: 0.0000cqw; top: 68.6602cqw; width: 100.0000cqw; height: 56.2500cqw;">
+        <img src="image/American%20Psycho%20Optiteling/hoofd.jpg" alt="American Psycho Optiteling afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-text proj-body proj-link-line" style="left: 34.2552cqw; top: 129.3646cqw; width: 32.0156cqw;">
+        <p><a href="https://youtu.be/TtMGNWwclcI?si=NCqeIrcFmk6KnhCw" target="_blank" rel="noopener noreferrer">https://youtu.be/TtMGNWwclcI?si=NCqeIrcFmk6KnhCw</a></p>
+      </div>
+      <div class="wf-text proj-body" style="left: 32.3958cqw; top: 134.0260cqw; width: 38.0052cqw;">
+        <p>Dit is een optiteling voor de film American Psycho. De hoofdrolspeler is ontzettend perfectionistisch. Van daar het potlood tekenen dat ook heel precies is. Dit word naarmate de optiteling verstoord met druppels bloed. Ook in de film loopt zijn strenge kijk op zichzelf uit tot [spoiler] moorden in zijn hoofd.</p>
+      </div>
+      <div class="wf-item " style="left: 11.4236cqw; top: 145.9892cqw; width: 25.3819cqw; height: 18.7500cqw;">
+        <img src="image/American%20Psycho%20Optiteling/Sequence%2001.00_00_07_16.Still002.jpg" alt="American Psycho Optiteling afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3090cqw; top: 145.9892cqw; width: 25.3819cqw; height: 18.7500cqw;">
+        <img src="image/American%20Psycho%20Optiteling/Sequence%2001.00_00_16_07.Still003.jpg" alt="American Psycho Optiteling afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.1944cqw; top: 145.9892cqw; width: 25.3819cqw; height: 18.7500cqw;">
+        <img src="image/American%20Psycho%20Optiteling/Sequence%2001.00_00_40_02.Still004.jpg" alt="American Psycho Optiteling afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.4844cqw; top: 165.2912cqw; width: 25.2604cqw; height: 18.8960cqw;">
+        <img src="image/American%20Psycho%20Optiteling/1781078242771-93f1ed6e-89d7-44dc-9233-d25e4ff9407a_2.jpg" alt="American Psycho Optiteling afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.3698cqw; top: 165.2912cqw; width: 25.2604cqw; height: 18.8960cqw;">
+        <img src="image/American%20Psycho%20Optiteling/1781078242771-93f1ed6e-89d7-44dc-9233-d25e4ff9407a_3.jpg" alt="American Psycho Optiteling afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 63.2552cqw; top: 165.3119cqw; width: 25.2604cqw; height: 18.8545cqw;">
+        <img src="image/American%20Psycho%20Optiteling/Adobe%20Scan%2011%20jun%202026_Pagina_3_Afbeelding_0001.jpg" alt="American Psycho Optiteling afbeelding 7" loading="lazy">
+      </div>
+    </section>
+    <section id="project-totem" class="wf-canvas project-detail" data-project-id="totem" style="--canvas-h: 3877.0;" hidden>
+      <div class="wf-banner" style="left: -0.0625cqw; top: 0.0000cqw; width: 100.1302cqw; height: 77.0052cqw;">
+        <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 37.3750cqw;">
+          <h2 class="banner-title">Totem</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: -0.0000cqw; top: 77.4914cqw; width: 11.3421cqw; height: 15.1622cqw;">
+        <img src="image/Totem/totem_schets_1.jpg" alt="Totem afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.2891cqw; top: 77.4909cqw; width: 11.3423cqw; height: 15.1610cqw;">
+        <img src="image/Totem/20240216_160900.jpg" alt="Totem afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 22.5781cqw; top: 77.4927cqw; width: 11.3446cqw; height: 15.1577cqw;">
+        <img src="image/Totem/20240216_160843.jpg" alt="Totem afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 35.7292cqw; top: 77.4499cqw; width: 11.3421cqw; height: 15.1585cqw;">
+        <img src="image/Totem/20240216_160934.jpg" alt="Totem afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 56.4095cqw; top: 77.4483cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_144837.jpg" alt="Totem afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 70.5208cqw; top: 77.5459cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_144749.jpg" alt="Totem afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 85.8887cqw; top: 77.5459cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_144948.jpg" alt="Totem afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: -0.0540cqw; top: 92.5438cqw; width: 11.3971cqw; height: 15.1588cqw;">
+        <img src="image/Totem/20240216_160909.jpg" alt="Totem afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.2891cqw; top: 92.5424cqw; width: 11.3421cqw; height: 15.1607cqw;">
+        <img src="image/Totem/20240216_160850.jpg" alt="Totem afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 22.5253cqw; top: 92.5447cqw; width: 11.3977cqw; height: 15.1609cqw;">
+        <img src="image/Totem/20240216_160839.jpg" alt="Totem afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 35.6766cqw; top: 92.4993cqw; width: 11.3960cqw; height: 15.1601cqw;">
+        <img src="image/Totem/20240216_160931.jpg" alt="Totem afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 70.5208cqw; top: 96.3936cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_144858.jpg" alt="Totem afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 85.8887cqw; top: 96.2634cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_145001.jpg" alt="Totem afbeelding 13" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: -0.0537cqw; top: 107.5944cqw; width: 11.3965cqw; height: 15.1612cqw;">
+        <img src="image/Totem/20240216_160857.jpg" alt="Totem afbeelding 14" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 11.2891cqw; top: 107.5974cqw; width: 11.3445cqw; height: 15.1570cqw;">
+        <img src="image/Totem/20240216_160912.jpg" alt="Totem afbeelding 15" loading="lazy">
+      </div>
+      <div class="wf-text proj-body" style="left: 38.2344cqw; top: 109.4896cqw; width: 28.5208cqw;">
+        <p>Eerst naar buiten gaan en dan foto’s maken van wat mij inspireert. Daarna nog meer verzamelen. Vervolgens ben ik een totem gaan schetsen die uit allemaal onderdelen bestaat die bij mij passen.</p>
+      </div>
+      <div class="wf-item " style="left: 85.8887cqw; top: 114.4600cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_144736.jpg" alt="Totem afbeelding 16" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 70.5208cqw; top: 115.0785cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20230930_144817.jpg" alt="Totem afbeelding 17" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 13.3464cqw; top: 118.7438cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Totem/totem_inspiratie_2.jpg" alt="Totem afbeelding 18" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 24.6354cqw; top: 118.7438cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Totem/totem_inspiratie_3.jpg" alt="Totem afbeelding 19" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 35.9245cqw; top: 118.7438cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Totem/totem_inspiratie_4.jpg" alt="Totem afbeelding 20" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 47.2135cqw; top: 118.7438cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Totem/totem_inspiratie_5.jpg" alt="Totem afbeelding 21" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: -0.0521cqw; top: 122.7022cqw; width: 13.6458cqw; height: 11.2891cqw;">
+        <img src="image/Totem/totem_inspiratie_1.jpg" alt="Totem afbeelding 22" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 141.5756cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183106.jpg" alt="Totem afbeelding 23" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 14.1113cqw; top: 141.5756cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183243.jpg" alt="Totem afbeelding 24" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 28.2227cqw; top: 141.5756cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183456.jpg" alt="Totem afbeelding 25" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 42.3340cqw; top: 141.5756cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_182255.jpg" alt="Totem afbeelding 26" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 56.4453cqw; top: 141.5170cqw; width: 43.6068cqw; height: 56.5625cqw;">
+        <img src="image/Totem/hoofd-20231013_183118.jpg" alt="Totem afbeelding 27" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 160.3907cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183215.jpg" alt="Totem afbeelding 28" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 14.1113cqw; top: 160.3907cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183538.jpg" alt="Totem afbeelding 29" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 28.2227cqw; top: 160.3907cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183650.jpg" alt="Totem afbeelding 30" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 42.3340cqw; top: 160.3907cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_182252.jpg" alt="Totem afbeelding 31" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 179.2058cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183026.jpg" alt="Totem afbeelding 32" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 14.1113cqw; top: 179.2058cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183908.jpg" alt="Totem afbeelding 33" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 28.2227cqw; top: 179.2058cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183103.jpg" alt="Totem afbeelding 34" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 42.3340cqw; top: 179.2058cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Totem/20231013_183334.jpg" alt="Totem afbeelding 35" loading="lazy">
+      </div>
+    </section>
+    <section id="project-tekenwerk" class="wf-canvas project-detail" data-project-id="tekenwerk" style="--canvas-h: 2582.3;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: 0.0000cqw; width: 100.1250cqw; height: 77.0104cqw;">
+        <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 37.3802cqw;">
+          <h2 class="banner-title">Tekenwerk</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: 4.8397cqw; top: 76.8875cqw; width: 30.2134cqw; height: 22.6905cqw;">
+        <img src="image/Tekenwerk/20221004_215429.jpg" alt="Tekenwerk afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.2395cqw; top: 76.8923cqw; width: 22.6840cqw; height: 30.2116cqw;">
+        <img src="image/Tekenwerk/20221220_214402.jpg" alt="Tekenwerk afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 64.9453cqw; top: 76.8879cqw; width: 30.2139cqw; height: 22.6929cqw;">
+        <img src="image/Tekenwerk/20221220_214411.jpg" alt="Tekenwerk afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 72.4686cqw; top: 100.5333cqw; width: 22.6929cqw; height: 30.2170cqw;">
+        <img src="image/Tekenwerk/hoofd-20230926_215151.jpg" alt="Tekenwerk afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 4.8363cqw; top: 108.0614cqw; width: 30.2237cqw; height: 22.6883cqw;">
+        <img src="image/Tekenwerk/20220920_220137.jpg" alt="Tekenwerk afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 37.2360cqw; top: 109.1031cqw; width: 30.2173cqw; height: 21.6533cqw;">
+        <img src="image/Tekenwerk/20221220_214405.jpg" alt="Tekenwerk afbeelding 6" loading="lazy">
+      </div>
+    </section>
+    <section id="project-inzakken" class="wf-canvas project-detail" data-project-id="inzakken" style="--canvas-h: 2480.0;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: -0.0521cqw; width: 100.1250cqw; height: 68.5469cqw;">
+        <img src="image/Wireframes/assets/banner_top.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 28.9115cqw;">
+          <h2 class="banner-title">Inzakken</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 68.8221cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_110310.jpg" alt="Inzakken afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 14.1113cqw; top: 68.8221cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_110833.jpg" alt="Inzakken afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 28.2227cqw; top: 68.8221cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_111207.jpg" alt="Inzakken afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 42.3340cqw; top: 68.8221cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_103218.jpg" alt="Inzakken afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 56.4453cqw; top: 68.7700cqw; width: 43.6068cqw; height: 56.5495cqw;">
+        <img src="image/Inzakken/hoofd-20231216_121502.jpg" alt="Inzakken afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 87.6372cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_113020.jpg" alt="Inzakken afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 14.1113cqw; top: 87.6372cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_114103.jpg" alt="Inzakken afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 28.2227cqw; top: 87.6372cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_121519.jpg" alt="Inzakken afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 42.3340cqw; top: 87.6372cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_103809.jpg" alt="Inzakken afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 106.4523cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_115853.jpg" alt="Inzakken afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 14.1113cqw; top: 106.4523cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_120531.jpg" alt="Inzakken afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 28.2227cqw; top: 106.4523cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_114608.jpg" alt="Inzakken afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 42.3340cqw; top: 106.4523cqw; width: 14.1113cqw; height: 18.8151cqw;">
+        <img src="image/Inzakken/20231216_105127.jpg" alt="Inzakken afbeelding 13" loading="lazy">
+      </div>
+    </section>
+    <section id="project-een-utrechtse-middag" class="wf-canvas project-detail" data-project-id="een-utrechtse-middag" style="--canvas-h: 2637.3;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: 0.0000cqw; width: 100.1250cqw; height: 77.0052cqw;">
+        <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 37.3750cqw;">
+          <h2 class="banner-title">Een Utrechtse middag</h2>
+        </div>
+      </div>
+      <div class="wf-item full-bleed-item" style="left: -0.0910cqw; top: 77.3413cqw; width: 100.1820cqw; height: 56.2500cqw;">
+        <img src="image/Een%20Utrechtse%20middag/hoofd-Schermafbeelding%202024-04-22%20205753.png" alt="Een Utrechtse middag afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-text proj-body utrecht-overlay-text" style="left: 21.2500cqw; top: 83.3229cqw; width: 34.8281cqw;">
+        <p class="utrecht-lead">Een Utrechtse middag ervaren</p><p>Dit is een reis op gewone dag in Utrecht. Deze reis weergeeft het gevoel en de geluiden van deze gewone dag die ik in Utrecht ben geweest. Deze video is een collage aan beelden die mijn ervaring in Utrecht uitbeelden.</p><p class="utrecht-link"><a href="https://www.youtube.com/watch?v=C08U-dNXG3M" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=C08U-dNXG3M</a></p>
+      </div>
+    </section>
+    <section id="project-abstractie-studie" class="wf-canvas project-detail" data-project-id="abstractie-studie" style="--canvas-h: 2610.2;" hidden>
+      <div class="wf-banner" style="left: -0.0729cqw; top: 0.0000cqw; width: 100.1250cqw; height: 77.0052cqw;">
+        <img src="image/Wireframes/assets/banner_section.png" alt="" class="banner-bg-img">
+        <div class="banner-text-wrap" style="top: 37.3750cqw;">
+          <h2 class="banner-title">Abstractie studie</h2>
+        </div>
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 77.4879cqw; width: 13.2446cqw; height: 20.2993cqw;">
+        <img src="image/Abstractie%20studie/20240123_220904.jpg" alt="Abstractie studie afbeelding 1" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 13.2446cqw; top: 77.4879cqw; width: 13.2446cqw; height: 20.2993cqw;">
+        <img src="image/Abstractie%20studie/20240123_220853.jpg" alt="Abstractie studie afbeelding 2" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 26.4893cqw; top: 77.4879cqw; width: 13.2446cqw; height: 20.2993cqw;">
+        <img src="image/Abstractie%20studie/20240123_220844.jpg" alt="Abstractie studie afbeelding 3" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 41.1215cqw; top: 77.4308cqw; width: 23.6270cqw; height: 15.9774cqw;">
+        <img src="image/Abstractie%20studie/hoofd.jpg" alt="Abstractie studie afbeelding 4" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 66.1328cqw; top: 77.4879cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Abstractie%20studie/20240422_192852.jpg" alt="Abstractie studie afbeelding 5" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 77.4219cqw; top: 77.4879cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Abstractie%20studie/20240422_192837.jpg" alt="Abstractie studie afbeelding 6" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 88.7109cqw; top: 77.4879cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Abstractie%20studie/20240422_192831.jpg" alt="Abstractie studie afbeelding 7" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 66.1328cqw; top: 92.5863cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Abstractie%20studie/20240422_192755.jpg" alt="Abstractie studie afbeelding 8" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 77.4219cqw; top: 92.5399cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Abstractie%20studie/20240422_192726.jpg" alt="Abstractie studie afbeelding 9" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 88.7109cqw; top: 92.5399cqw; width: 11.2891cqw; height: 15.0521cqw;">
+        <img src="image/Abstractie%20studie/20240422_192803.jpg" alt="Abstractie studie afbeelding 10" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 41.1165cqw; top: 95.0728cqw; width: 23.6321cqw; height: 17.7493cqw;">
+        <img src="image/Abstractie%20studie/20240226_104029.jpg" alt="Abstractie studie afbeelding 11" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 97.7312cqw; width: 13.2446cqw; height: 19.8669cqw;">
+        <img src="image/Abstractie%20studie/20240123_220857.jpg" alt="Abstractie studie afbeelding 12" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 13.2446cqw; top: 97.7312cqw; width: 13.2446cqw; height: 19.8669cqw;">
+        <img src="image/Abstractie%20studie/20240123_220849.jpg" alt="Abstractie studie afbeelding 13" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 26.4893cqw; top: 97.7312cqw; width: 13.2446cqw; height: 19.8669cqw;">
+        <img src="image/Abstractie%20studie/20240123_220841.jpg" alt="Abstractie studie afbeelding 14" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 69.8958cqw; top: 107.5920cqw; width: 15.0521cqw; height: 11.2891cqw;">
+        <img src="image/Abstractie%20studie/20240422_192737.jpg" alt="Abstractie studie afbeelding 15" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 84.9479cqw; top: 107.5920cqw; width: 15.0521cqw; height: 11.2891cqw;">
+        <img src="image/Abstractie%20studie/20240422_192745.jpg" alt="Abstractie studie afbeelding 16" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 0.0000cqw; top: 118.9272cqw; width: 23.2837cqw; height: 13.1122cqw;">
+        <img src="image/Abstractie%20studie/20240130_215840.jpg" alt="Abstractie studie afbeelding 17" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 23.2837cqw; top: 118.9272cqw; width: 23.2837cqw; height: 13.1122cqw;">
+        <img src="image/Abstractie%20studie/20240130_215835.jpg" alt="Abstractie studie afbeelding 18" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 46.5674cqw; top: 118.8750cqw; width: 21.1670cqw; height: 13.2202cqw;">
+        <img src="image/Abstractie%20studie/20240206_215856.jpg" alt="Abstractie studie afbeelding 19" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 69.8958cqw; top: 118.8811cqw; width: 15.0521cqw; height: 11.2891cqw;">
+        <img src="image/Abstractie%20studie/20240422_192826.jpg" alt="Abstractie studie afbeelding 20" loading="lazy">
+      </div>
+      <div class="wf-item " style="left: 84.9479cqw; top: 118.8811cqw; width: 15.0521cqw; height: 11.2891cqw;">
+        <img src="image/Abstractie%20studie/20240422_192813.jpg" alt="Abstractie studie afbeelding 21" loading="lazy">
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
