@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
   /* Potlood-schetsboek achtergrond uit de PDF wireframes */
   background-color: #ffffff;
-  background-image: url("image/Wireframes/assets/bg_sketch.jpg");
+  background-image: url("image%20lowres/bg_sketch.jpg");
   background-repeat: repeat-y;
   background-size: 100% auto;
   background-position: top center;
